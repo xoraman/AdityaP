@@ -184,7 +184,7 @@
 				
 					<div class="single-product-item">
 						<div class="product-image">
-							<img src="./assets/img/products/<?php echo $row["img_name"]; ?>.jpg" alt="1">
+							<img src="C:\xampp\htdocs\Catering\ItemList\"<?php echo $row["img_name"]; ?>.jpg" alt="1">
 						</div>
 						<h3><?php echo $row["prod_name"]; ?></h3></h3>
 						<p class="product-price"><span>Per Kg</span> Rs. <?php echo $row["price"]; ?></p>

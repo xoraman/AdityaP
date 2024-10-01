@@ -1,8 +1,6 @@
 <?php
  $user = $_POST['user'];
-?>
-<?php
-require'connection.php';
+require 'connection.php';
 
 if(isset($_POST["submit"]))
 {
@@ -42,16 +40,10 @@ if(isset($_POST["submit"]))
             $newImageName .= '.'.$imageExtension;
 
             move_uploaded_file($tmpName , 'ItemList/'.$newImageName);
-            $query = "INSERT into items VALUES('','$name','$price','$newImageName)";
+            $query = "INSERT into products VALUES('','$newImageName','$name','$price')";
 
             mysqli_query($con,$query);
-            echo
-            "<script>
-            alert('Successfully Added);
-            document.location.href='addProduct.php';
-            </script>"
-            ;
-        }
+		            }
 
        
     }
@@ -120,11 +112,10 @@ if(isset($_POST["submit"]))
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li><a href="adminIndex.html">Home</a></li>
-								<li><a href="adminUsers.html">Users</a></li>
-								<li><a href="adminOrders.html">Orders</a></li>
+								<li><a href="adminIndex.php">Home</a></li>
+								<li><a href="adminaccs.php">Users</a></li>
+								<li><a href="adminOrdes.php">Orders</a></li>
 								<li><a href="#">Add Item</a></li>
-										<li><a href="#">View items</a></li>
 								<li><a href="logIn.html">LogOut</a></li>
 								<li><h3><?php echo $user; ?></h3></li>	
 							</ul>
