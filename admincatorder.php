@@ -1,5 +1,6 @@
 <?php
-$user = $_POST['user'];
+include('connection.php');
+$rows=mysqli_query($con,"SELECT * FROM cateringOrder");
 ?>
 
 <!DOCTYPE html>
@@ -64,10 +65,9 @@ $user = $_POST['user'];
 						<nav class="main-menu" style='color:cyan;'>
 							<ul>
 								<li><a href="adminIndex.php">Home</a></li>
-								<li><a href="adminacc.php">Users</a></li>
+								<li><a href="adminUser.php">Users</a></li>
 								<li><a href="adminOrder.php">Orders</a></li>
-								<li><a href="addProduct.php">Add Item</a></li>
-								<li><a href="addProduct.php">Add Item</a></li>
+								<li><a href="#">Add Item</a></li>
 								<li><a href="logIn.html">LogOut</a></li>
 							
 							</ul>
@@ -80,25 +80,80 @@ $user = $_POST['user'];
 	</div>
 	<!-- end header -->
 	<!-- breadcrumb-section -->
-	<div class="breadcrumb-section "> -->
+	
+
+
+
+
+    <div class="breadcrumb-section "> -->
 		<!-- <br><br><br><br><br><br><br><br> -->
 		<div class="container">
-			<div class="row">
-				<div class="col-sm-4 text-center">
-							<h1>Total Orders</h1><br>
-							<h3>1000</h3>
-				</div>
-				<div class="col-sm-4 text-center">
-							<h1>Total Accounts</h1><br>
-							<h3>1000</h3>
-			    </div>
-			    <div class="col-sm-4 text-center">
-				<h1>Total Products</h1><br>
-							<h3>8</h3>
-										</div>
-		    </div>
+        <center>
+
+<table style="color:white;">
+    <tr>
+        <th width="60">No.</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <th width="130">Username</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <th width="130">Name</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <th width="150">Phone</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <th width="120">address</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <th width="100">order</th>&nbsp;&nbsp;&nbsp;
+    </tr>
+    <tr>
+        <td></td>&nbsp;&nbsp;
+        <td></td>&nbsp;&nbsp;
+        <td></td>&nbsp;&nbsp;
+        <td></td>&nbsp;&nbsp;
+        <td></td>&nbsp;&nbsp;
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>&nbsp;&nbsp;
+        <td></td>&nbsp;&nbsp;
+        <td></td>&nbsp;&nbsp;
+        <td></td>&nbsp;&nbsp;
+        <td></td>&nbsp;&nbsp;
+        <td></td>
+    </tr>
+    <?php
+        $count=1;
+        foreach($rows as $row) :
+    ?>
+    <tr>
+        <td><?php echo $count; ?></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <td><?php echo $row["username"]; ?></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <td><?php echo $row["name"]; ?></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <td><?php echo $row["phone"]; ?></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <td><?php echo $row["address"]; ?></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <td><?php echo $row["orders"]; ?></td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </tr>
+    <tr>
+        <td></td>&nbsp;&nbsp;
+        <td></td>&nbsp;&nbsp;
+        <td></td>&nbsp;&nbsp;
+        <td></td>&nbsp;&nbsp;
+        <td></td>&nbsp;&nbsp;
+        <td></td>
+    </tr>
+    <?php
+
+    $count++;
+    endforeach;
+
+    ?>
+</table>
+
+</center>
+
+
 		</div>
 	</div>
+
+
+
+
+
+
 
 	<!-- testimonail-section -->
 	<div class="testimonail-section mt-80 mb-150 text-center">
