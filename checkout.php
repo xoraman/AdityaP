@@ -60,7 +60,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="index.html">
-								<img src="assets/img/logo.png" alt="">
+								<img src="assets/img/logon.png" alt="">
 							</a>
 						</div>
 						<!-- logo -->
@@ -68,27 +68,11 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li><a href="index_2.html">Home</a></li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="#">Catering Services</a>
-									<ul class="sub-menu">
-										<li><a href="news.html">Catering Materials On Rent</a></li>
-										<li><a href="news.html">Catering Packages</a></li>
-									</ul>
-								</li>
-								<li><a href="contact.html">Contact</a></li>
-								<li><a>Shop</a>
-									<ul class="sub-menu">
-										<form action="shop.php" method="post">
-											<input type="hidden" name="user" value="<?php echo $user ?>">
-											<input type="hidden" name="id" value="<?php echo $id ?>">
-											<li><input type="submit" value ="Shop" style="background-color:white;"></li>
-										</form>
-										<li><a href="checkout.html">Check Out</a></li>
-										<li><a href="single-product.html">Single Product</a></li>
-										<li><a href="cart.html">Cart</a></li>
-									</ul>
-								</li>
+							<li><a href="index_2.php?user=<?php echo $user ?>">Home</a></li>
+								<li><a href="about.php?user=<?php echo $user ?>">About</a></li>
+								<li><a href="cateringOrder.php?user=<?php echo $user ?>">Carering orders</a></li>
+								<li><a href="contact.php?user=<?php echo $user ?>">Contact</a></li>
+								<li><a href="shop.php?user=<?php echo $user ?>">Shop</a></li>
 								<li>
 									<div class="header-icons">
 										<?php
@@ -176,7 +160,7 @@
 						        		<p><input type="text" name="address" style="width:90%; height:50px;" placeholder="Address"></p>
 						        		<p><input type="tel"  name="phone" style="width:90%; height:50px;"placeholder="Phone"></p>
 									<center>
-									<img src="./assets/img/QR_aman.jpeg" style="height:500px; width:360x;">
+									<img src="./assets/img/QR_aditya.jpeg" style="height:500px; width:360x;">
 									</center>
 						        </div>
 						      </div>

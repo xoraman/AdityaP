@@ -1,7 +1,8 @@
 
 <?php
     $user = '';
-    $user = $_POST['user'];
+    $user = $_GET['user'];
+	if($user != ''){
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,42 +51,41 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="index.html">
-								<img src="assets/img/logo.png" alt="">
+								<img src="assets/img/logon.png" alt="">
 							</a>
 						</div>
 						<!-- logo -->
 
-						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li><a href="index_2.html">Home</a></li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="#">Catering Services</a>
-									<ul class="sub-menu">
-										<li><a href="news.html">Catering Materials On Rent</a></li>
-										<li><a href="news.html">Catering Packages</a></li>
-									</ul>
-								</li>
-								<li><a href="contact.html">Contact</a></li>
-								<li><a href="shop.html">Shop</a>
-									<ul class="sub-menu">
-										<li><a href="shop.html">Shop</a></li>
-										<li><a href="checkout.html">Check Out</a></li>
-										<li><a href="single-product.html">Single Product</a></li>
-										<li><a href="cart.html">Cart</a></li>
-									</ul>
-								</li>
+							<li><a href="index_2.php?user=<?php echo $user ?>">Home</a></li>
+								<li><a href="about.php?user=<?php echo $user ?>">About</a></li>
+								<li><a href="cateringOrder.php?user=<?php echo $user ?>">Carering orders</a></li>
+								<li><a href="contact.php?user=<?php echo $user ?>">Contact</a></li>
+								<li><a href="shop.php?user=<?php echo $user ?>">Shop</a></li>
+								
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+										<?php
+										if($user != '')
+										{
+									    ?>
+										<a href="#"  style="background-color:cyan;border-radius:300px;"><?php echo $user; ?> </a>
+										<?php
+										}
+										else
+										{
+										?>
+										<a href="logIn.html"  style="font-size:100px;background-color:cyan; border-radius:300px;">Log In </a>
+									    <?php
+										}
+										?>
 									</div>
 								</li>
 							</ul>
 						</nav>
-						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
 						<div class="mobile-menu"></div>
-						<!-- menu end -->
+						
 					</div>
 				</div>
 			</div>
@@ -230,7 +230,7 @@
 		</div>
 	</div>
 	<!-- end footer -->
-	
+	<?php }else{ header("Location:logIn.html");} ?>
 	<!-- jquery -->
 	<script src="assets/js/jquery-1.11.3.min.js"></script>
 	<!-- bootstrap -->

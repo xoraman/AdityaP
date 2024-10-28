@@ -28,9 +28,9 @@ elseif(mysqli_num_rows($result)==1)
 
     $username=$row["username"];
     ?>
-<form action="index_2.php" method="post" id="form">
+<form action="index_2.php" method="get" id="form">
     <input type="hidden" name="user" value="<?php echo $username; ?>">
-    <input type="hidden" name="id" value="<?php echo $row["id"] ?>">
+    <!-- <input type="hidden" name="id" value="<?php echo $row["id"] ?>"> -->
 </form>
 <script>
 document.getElementById("form").submit();

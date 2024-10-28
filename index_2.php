@@ -1,7 +1,7 @@
 <?php
     $user = '';
-    $user = $_POST['user'];
-	$id = $_POST['id'];
+    $user = $_GET['user'];
+	if($user != ''){
 ?>
 
 <!DOCTYPE html>
@@ -57,7 +57,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="index.html">
-								<img src="assets/img/logo.png" alt="">
+								<img src="assets/img/logon.png" alt="">
 							</a>
 						</div>
 						<!-- logo -->
@@ -65,37 +65,24 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li><a href="index_2.php">Home</a></li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="#">Catering Services</a>
-									<ul class="sub-menu">
-										<li><a href="news.html">Catering Materials On Rent</a></li>
-										<li><a href="news.html">Catering Packages</a></li>
-									</ul>
-								</li>
-								<li><a href="contact.html">Contact</a></li>
-								<li><a>Shop
-									<ul class="sub-menu"> 
-										<form action="shop.php" method="post">
-											<input type="hidden" name="user" value="<?php echo $user ?>">
-											<input type="hidden" name="id" value="<?php echo $id ?>">
-											<li><input type="submit" value ="Shop" style="background-color:white;"></li>
-										</form></a>
-									</ul>
-								</li>
+								<li><a href="index_2.php?user=<?php echo $user ?>">Home</a></li>
+								<li><a href="about.php?user=<?php echo $user ?>">About</a></li>
+								<li><a href="cateringOrder.php?user=<?php echo $user ?>">Carering orders</a></li>
+								<li><a href="contact.php?user=<?php echo $user ?>">Contact</a></li>
+								<li><a href="shop.php?user=<?php echo $user ?>">Shop</a></li>
 								<li>
 									<div class="header-icons">
 										<?php
 										if($user != '')
 										{
 									    ?>
-										<a href="#"><?php echo $user; ?> </a>
+										<a href="#"  style="background-color:cyan;border-radius:300px;"><?php echo $user; ?> </a>
 										<?php
 										}
 										else
 										{
 										?>
-										<a href="logIn.html">Log In </a>
+										<a href="logIn.html"  style="font-size:100px;background-color:cyan; border-radius:300px;">Log In </a>
 									    <?php
 										}
 										?>
@@ -245,14 +232,8 @@
             	<!--Image Column-->
             	<div class="image-column col-lg-6">
                 	<div class="image">
-                    	<div class="price-box">
-                        	<div class="inner-price">
-                                <span class="price">
-                                    <strong>30%</strong> <br> off per kg
-                                </span>
-                            </div>
-                        </div>
-                    	<img src="assets/img/a.jpg" alt="">
+                    	
+                    	<img src="assets/img/a1.jpg" alt="">
                     </div>
                 </div>
                 <!--Content Column-->
@@ -341,6 +322,8 @@
 			</div>
 		</div>
 	</div>
+	<?php }else{header("Location:logIn.html");}?>
+
 	<!-- end footer -->
 	<!-- jquery -->
 	<script src="assets/js/jquery-1.11.3.min.js"></script>

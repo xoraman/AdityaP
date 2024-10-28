@@ -609,6 +609,11 @@ nav.main-menu ul > li:hover ul {
   opacity: 1;
   visibility: visible;
 }
+nav.main-menu ul > li:active ul:active {
+  opacity: 1;
+  color: #000;
+  visibility: visible;
+}
 
 nav.main-menu ul li:last-child a {
   display: inline-block;
@@ -2063,7 +2068,7 @@ a.video-play-btn {
 }
 
 .abt-bg {
-  background-image: url(../img/abt.jpg);
+  background-image: url('');
   height: 100%;
   width: 100%;
   background-size: cover;

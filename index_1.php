@@ -61,32 +61,31 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li><a href="index_2.html">Home</a></li>
+								<li><a href="index_2.php">Home</a></li>
 								<li><a href="about.html">About</a></li>
-								<li><a href="#">Catering Services</a>
-									<ul class="sub-menu">
-										<li><a href="news.html">Catering Materials On Rent</a></li>
-										<li><a href="news.html">Catering Packages</a></li>
-									</ul>
-								</li>
+								<li>
+								<form action="cateringOrder.php" method="post">
+											<input type="hidden" name="user" value="<?php echo $user ?>">
+											<input type="hidden" name="id" value="<?php echo $id ?>">
+											<li><input type="submit" value ="co"></li>
+										</form></a>
+								
 								<li><a href="contact.html">Contact</a></li>
-								<li><a>Shop</a>
-									<ul class="sub-menu">
+								<li><a>Shop
+									<ul class="sub-menu"> 
 										<form action="shop.php" method="post">
 											<input type="hidden" name="user" value="<?php echo $user ?>">
 											<input type="hidden" name="id" value="<?php echo $id ?>">
 											<li><input type="submit" value ="Shop" style="background-color:white;"></li>
-										</form>
-										<li><a href="checkout.html">Check Out</a></li>
-										<li><a href="single-product.html">Single Product</a></li>
-										<li><a href="cart.html">Cart</a></li>
+										</form></a>
 									</ul>
 								</li>
 								<li>
 									<div class="header-icons">
-										
-										<a href="logIn.html">Log In </a>
 									
+		
+										<a href="logIn.html">Log In </a>
+										
 									</div>
 								</li>
 							</ul>
@@ -225,51 +224,6 @@
 	</div>
 	<!-- end features list section -->
 
-	<!-- product section -->
-	<div class="product-section mt-150 mb-150">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 offset-lg-2 text-center">
-					<div class="section-title">	
-						<h3><span class="orange-text">Our</span> Products</h3>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/product-img-1.jpg" alt=""></a>
-						</div>
-						<h3>Strawberry</h3>
-						<p class="product-price"><span>Per Kg</span> 85$ </p>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt=""></a>
-						</div>
-						<h3>Berry</h3>
-						<p class="product-price"><span>Per Kg</span> 70$ </p>
-						<!-- <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a> -->
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/product-img-3.jpg" alt=""></a>
-						</div>
-						<h3>Lemon</h3>
-						<p class="product-price"><span>Per Kg</span> 35$ </p>
-						<!-- <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a> -->
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- end product section -->
 
 	<!-- cart banner section -->
 	<section class="cart-banner pt-100 pb-100">
@@ -374,6 +328,8 @@
 			</div>
 		</div>
 	</div>
+	
+
 	<!-- end footer -->
 	<!-- jquery -->
 	<script src="assets/js/jquery-1.11.3.min.js"></script>

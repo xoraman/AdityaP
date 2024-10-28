@@ -1,7 +1,7 @@
 <?php
     $user = '';
-    $user = $_POST['user'];
-	$id = $_POST['id'];
+    $user = $_GET['user'];
+	if($user != ''){
 	include('connection.php');
     $prolist=mysqli_query($con,"SELECT * From products");
 ?>
@@ -52,7 +52,7 @@
 						<!-- logo -->
 						<div class="site-logo">
 							<a href="index.html">
-								<img src="assets/img/logo.png" alt="">
+								<img src="assets/img/logon.png" alt="">
 							</a>
 						</div>
 						<!-- logo -->
@@ -60,27 +60,11 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li><a href="index_2.php">Home</a></li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="#">Catering Services</a>
-									<ul class="sub-menu">
-										<li><a href="news.html">Catering Materials On Rent</a></li>
-										<li><a href="news.html">Catering Packages</a></li>
-									</ul>
-								</li>
-								<li><a href="contact.html">Contact</a></li>
-								<li><a>Shop</a>
-									<ul class="sub-menu">
-										<form action="shop.php" method="post">
-											<input type="hidden" name="user" value="<?php echo $user ?>">
-											<input type="hidden" name="id" value="<?php echo $id ?>">
-											<li><input type="submit" value ="Shop" style="background-color:white;"></li>
-										</form>
-										<li><a href="checkout.html">Check Out</a></li>
-										<li><a href="single-product.html">Single Product</a></li>
-										<li><a href="cart.html">Cart</a></li>
-									</ul>
-								</li>
+							<li><a href="index_2.php?user=<?php echo $user ?>">Home</a></li>
+								<li><a href="about.php?user=<?php echo $user ?>">About</a></li>
+								<li><a href="cateringOrder.php?user=<?php echo $user ?>">Carering orders</a></li>
+								<li><a href="contact.php?user=<?php echo $user ?>">Contact</a></li>
+								<li><a href="shop.php?user=<?php echo $user ?>">Shop</a></li>
 								<li>
 									<div class="header-icons">
 										<?php
@@ -184,7 +168,7 @@
 				
 					<div class="single-product-item">
 						<div class="product-image">
-							<img src="C:\xampp\htdocs\Catering\ItemList\"<?php echo $row["img_name"]; ?>.jpg" alt="1">
+							<img src=""<?php echo $row["img_name"]; ?>.jpg" alt="1">
 						</div>
 						<h3><?php echo $row["prod_name"]; ?></h3></h3>
 						<p class="product-price"><span>Per Kg</span> Rs. <?php echo $row["price"]; ?></p>
@@ -240,7 +224,10 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div><?php }else{
+		
+		header("Location:logIn.html");
+}?>
 	<!-- end footer -->
 	<!-- jquery -->
 	<script src="assets/js/jquery-1.11.3.min.js"></script>
