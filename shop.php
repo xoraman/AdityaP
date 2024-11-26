@@ -132,29 +132,7 @@
 		<div class="container">
 
 			<div class="row product-lists">
-				<div class="col-lg-4 col-md-6 text-center strawberry">
-					<form method="post" action="addToCart.php">
-					<?php 
-						$product_name = "chivada";
-						$product_price = "180";
-					?>
-					<input type="hidden" name="user" value="<?php echo $user ?>">
-					<input type="hidden" name="id" value="<?php echo $id ?>">
-					<input type="hidden" name="prod_name" value="<?php echo $product_name ?>">
-					<input type="hidden" name="prod_price" value="<?php echo $product_price ?>">
-				
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="assets/img/products/bhajaka chivada.jpg" alt=""></a>
-						</div>
-						<h3><?php echo $product_name ?></h3></h3>
-						<p class="product-price"><span>Per Kg</span> Rs. <?php echo $product_price ?></p>
-						<!-- <a href="single-product.html" class="cart-btn">View</a> -->
-						<input type="submit" value="Add to Cart" class="cart-btn" /><i class="fas fa-shopping-cart"></i>
-						<!-- <a href="cart.php?id=<?php echo $id; ?>&user=<?php echo $user; ?>" ><i class="fas fa-shopping-cart"></i> </> -->
-					</div>
-					</form>
-				</div>
+
 				<?php
 					 while($row = mysqli_fetch_assoc($prolist)){
 				?>
@@ -173,7 +151,20 @@
 						<h3><?php echo $row["prod_name"]; ?></h3></h3>
 						<p class="product-price"><span>Per Kg</span> Rs. <?php echo $row["price"]; ?></p>
 						<!-- <a href="single-product.html" class="cart-btn">View</a> -->
-						<input type="submit" value="Add to Cart" class="cart-btn" /><i class="fas fa-shopping-cart"></i>
+						 <?php
+						 if($user == "null"){
+?>
+
+<a href="logIn.html" class="cart-button">Log In</a>
+<?php
+						 }
+						 else{
+?>
+<input type="submit" value="Add to Cart" class="cart-btn" /><i class="fas fa-shopping-cart"></i>
+<?php
+						 }
+						 ?>
+						
 						<!-- <a href="cart.php?id=<?php echo $id; ?>&user=<?php echo $user; ?>" ><i class="fas fa-shopping-cart"></i> </> -->
 					</div>
 					</form>

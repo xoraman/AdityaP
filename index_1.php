@@ -1,5 +1,7 @@
 
-
+<?php
+	$user = "";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,25 +63,11 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li><a href="index_2.php">Home</a></li>
-								<li><a href="about.html">About</a></li>
-								<li>
-								<form action="cateringOrder.php" method="post">
-											<input type="hidden" name="user" value="<?php echo $user ?>">
-											<input type="hidden" name="id" value="<?php echo $id ?>">
-											<li><input type="submit" value ="co"></li>
-										</form></a>
-								
-								<li><a href="contact.html">Contact</a></li>
-								<li><a>Shop
-									<ul class="sub-menu"> 
-										<form action="shop.php" method="post">
-											<input type="hidden" name="user" value="<?php echo $user ?>">
-											<input type="hidden" name="id" value="<?php echo $id ?>">
-											<li><input type="submit" value ="Shop" style="background-color:white;"></li>
-										</form></a>
-									</ul>
-								</li>
+							<li><a href="index_2.php?user=<?php echo "null" ?>">Home</a></li>
+								<li><a href="about.php?user=<?php echo "null" ?>">About</a></li>
+								<li><a href="cateringOrder.php?user=<?php echo $user ?>">Carering orders</a></li>
+								<li><a href="contact.php?user=<?php echo "" ?>">Contact</a></li>
+								<li><a href="shop.php?user=<?php echo $user ?>">Shop</a></li>
 								<li>
 									<div class="header-icons">
 									
